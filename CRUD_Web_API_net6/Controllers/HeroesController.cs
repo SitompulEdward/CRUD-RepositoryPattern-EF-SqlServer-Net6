@@ -11,9 +11,11 @@ namespace CRUD_Web_API_net6.Controllers
     public class HeroesController : ControllerBase
     {
         private readonly IHerosService _service;
-        public HeroesController(IHerosService service)
+        private readonly DataContext _context;
+        public HeroesController(IHerosService service, DataContext dataContext)
         {
             _service = service;
+            _context = dataContext;
         }
 
         [HttpGet]
@@ -73,5 +75,6 @@ namespace CRUD_Web_API_net6.Controllers
 
             return Ok(data);
         }
+
     }
 }

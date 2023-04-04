@@ -17,6 +17,7 @@ builder.Services.AddSwaggerGen();
 
 //Use ConnectionString in DataContext
 builder.Services.AddDbContext<DataContext>();
+
 builder.Services.AddScoped<IHerosService, HeroesService>();
 
 var app = builder.Build();
